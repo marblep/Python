@@ -12,7 +12,7 @@ class VideoInfo:
         self.size = size_
         self.mtime = mtime_
         self.mtime_str = time.ctime(mtime_)
-    
+
 def listVideoFiles(dirname, types):
     allVideos = []
     try:
@@ -29,9 +29,9 @@ def listVideoFiles(dirname, types):
                         break
     except Exception,e:
         print e
-        
+
     return allVideos
-    
+
 
 def listAllTypes(dirname):
     allTypes = []
@@ -49,6 +49,10 @@ if __name__ == "__main__":
     #'''
     videos = listVideoFiles(videoRootPath, videoTypes)
     print len(videos), " Videos \n"
-    for i in range(109,119):
-        print videos[i].filename, "\t", videos[i].size, '\t', videos[i].mtime_str
+    sum = 0
+    for i in range(len(videos)):
+        sum += videos[i].size
+    print sum/1024
+    #for i in range(109,119):
+    #    print videos[i].filename, "\t", videos[i].size, '\t', videos[i].mtime_str
 
