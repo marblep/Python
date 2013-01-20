@@ -5,13 +5,14 @@ Created on 2013-1-12
 @author: Administrator
 '''
 
+import sys
 from PyQt4 import QtCore, QtGui
-import ListFile
+from main.logic import videoscan
 
 def populateTableWidget(tableWidget):
     
     row = 0
-    videoData = ListFile.getVideoInfo(tableWidget.rowCount())
+    videoData = videoscan.getVideoInfo(tableWidget.rowCount())
     for info in videoData:
         item0 = QtGui.QTableWidgetItem(info.filename.decode('gbk'))
         item1 = QtGui.QTableWidgetItem(str(info.size))
@@ -24,10 +25,7 @@ def populateTableWidget(tableWidget):
         tableWidget.setItem(row, 3, item3)
         row+=1
                 
-if __name__ == '__main__':
-
-    import sys
-
+def Launch():
     app = QtGui.QApplication(sys.argv)
 
     num_item = 10
@@ -49,3 +47,10 @@ if __name__ == '__main__':
     tableWidget.show()
 
     sys.exit(app.exec_())
+    
+    
+if __name__ == '__main__':
+    Launch()
+    
+
+    
