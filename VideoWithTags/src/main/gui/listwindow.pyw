@@ -4,13 +4,12 @@ Created on 2013-1-12
 
 @author: Administrator
 '''
-
+import os
 import sys
 from PyQt4 import QtCore, QtGui
 from main.logic import videoscan
 
 def populateTableWidget(tableWidget):
-    
     row = 0
     videoData = videoscan.getVideoInfo(tableWidget.rowCount())
     for info in videoData:
@@ -24,7 +23,8 @@ def populateTableWidget(tableWidget):
         tableWidget.setItem(row, 2, item2)
         tableWidget.setItem(row, 3, item3)
         row+=1
-                
+            
+            
 def Launch():
     app = QtGui.QApplication(sys.argv)
 
