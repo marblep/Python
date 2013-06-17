@@ -74,7 +74,7 @@ if __name__ == "__main__":
     import re
     from toblocks import blocks
 
-    input_filename = r'E:\eclipse-java-juno-SR1-win32\workspace\FromNoviceToProfessional\src\test_input.txt'
+    input_filename = r'..\test_input.txt'
     inputfile = open(input_filename)
     
     handler = HTMLRenderer()
